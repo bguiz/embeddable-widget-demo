@@ -1,7 +1,7 @@
 {
   "name": "embeddable-widget-demo-server",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Server package for embeddable client widget demo",
   "main": "index.js",
   "scripts": {

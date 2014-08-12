@@ -15,6 +15,7 @@
   "author": "bguiz",
   "license": "GPLv3",
   "dependencies": {
+    "body-parser": "^1.6.3",
     "ejs": "^1.0.0",
     "express": "^4.8.3"
   }

@@ -1,8 +1,8 @@
 {
   "name": "embeddable-widget-demo-server",
   "private": true,
-  "version": "0.0.1",
-  "description": "Server package for embeddable client widget demo",
+  "version": "0.0.2",
+  "description": "Demo for creating widgets that are embeddable on 3rd party sites",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

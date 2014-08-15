@@ -1,7 +1,7 @@
 {
   "name": "embeddable-widget-demo-server",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Demo for creating widgets that are embeddable on 3rd party sites",
   "main": "index.js",
   "scripts": {

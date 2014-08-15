@@ -5,3 +5,43 @@
     <p class="bar">no bar :(</p>
     <button class="bar-button">Foo!</button>
 </div>
+<% if (isIframe) { %>
+<script>
+    var serverHost = '<%= serverHost %>';
+    var id = '<%= id %>';
+    var partyId = '<%= partyId %>';
+    var fooWidget = document;
+    var fooWidgetButton = document.querySelector('.bar-button');
+    if (!fooWidgetButton) {
+        return;
+    }
+    var fooWidgetButtonFunction = function() {
+        //TODO disable the button temporarily to prevent accidental double-click
+        var barXhr = new XMLHttpRequest();
+        barXhr.onload = function() {
+            var result = JSON.parse(this.responseText);
+            console.log(result);
+            var barPara = document.querySelector('.bar');
+            if (barPara) {
+                barPara.innerHTML = JSON.stringify(result);
+            }
+        };
+        barXhr.open('POST', serverHost+'/api/3rd/foo/widget/'+id+'/bar?partyId='+partyId);
+        var content = {
+            fooId: id,
+        };
+        content = JSON.stringify(content);
+        barXhr.setRequestHeader('Content-type', 'application/json');
+        barXhr.send(content);
+    };
+    if (fooWidgetButton.addEventListener) {
+        fooWidgetButton.addEventListener('click', fooWidgetButtonFunction);
+    }
+    else if (fooWidgetButton.attachEvent) {
+        fooWidgetButton.attachEvent('onclick', fooWidgetButtonFunction);
+    }
+    else {
+        fooWidgetButton.onclick = fooWidgetButtonFunction;
+    }
+</script>
+<% } %>
